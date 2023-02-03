@@ -8,6 +8,8 @@
 <h1>
 	Hello world!  
 </h1>
+<a heef ="./product/List?num=1&num=2&num=3">productList</a>
+<a heef ="./product/List">productList</a>
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>
