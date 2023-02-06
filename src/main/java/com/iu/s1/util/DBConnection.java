@@ -17,7 +17,7 @@ public class DBConnection {
       //1.연결정보 나열 - id, pw, driver, url
       String user = "user01";
       String password = "user01";
-      String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+      String url = "jdbc:oracle:thin:@192.168.1.39:1521:xe";
             //SID면 :sid이름, ServiceName이면 /ServiceName이름
       String driver = "oracle.jdbc.driver.OracleDriver";
       

@@ -11,8 +11,6 @@
 		<bean class="com.iu.s1.Soldier" id="soldier"></bean>
 		<!-- soldier.setGun(gun) -->
 		<!--  setter이름은 set을 제외하고 첫글자를 소문자로 바꾼거 -->
-		<property name="gun" ref="gun"></property>
-		
 		<bean class="com.iu.s1.Bullet" id="bullet"></bean>
 		<!--  -->
 </beans>
