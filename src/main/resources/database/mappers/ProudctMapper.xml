@@ -31,4 +31,7 @@
   DELETE PRODUCT WHERE PRODUCTNUM=#{productNum}
   
   </delete>
+  
+  
+  
   </mapper>

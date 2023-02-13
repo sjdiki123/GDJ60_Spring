@@ -113,12 +113,12 @@ public class ProductDAO {
 	}
 	//-------------------------------------------------------------------------------------------
 	
-//	public List<ProductDTO> getProductList() throws Exception{
+	public List<ProductDTO> getProductList() throws Exception{
 		ArrayList<ProductDTO> ar = new ArrayList<ProductDTO>();
 		
+		return	sqlSession.selectList(NAMESPACE+"getProductList");
 		
-		
-//	}
+}
 	
 	public int setAddProduct(ProductDTO productDTO) throws Exception{
 		
