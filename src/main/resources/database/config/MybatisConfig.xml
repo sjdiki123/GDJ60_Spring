@@ -8,6 +8,8 @@
   
   <typeAliases>
   <typeAlias type="com.iu.s1.product.ProductDTO" alias="ProductDTO"/>
+  <typeAlias type="com.iu.s1.bankbook.BankbookDTO" alias="bankbookDTO"/>
+  <typeAlias type="com.iu.s1.bankbook.BankbookDTO" alias="bankbookDTO"/>
   
   <typeAlias type="java.lang.Long"  alias= "Long"/>
   
