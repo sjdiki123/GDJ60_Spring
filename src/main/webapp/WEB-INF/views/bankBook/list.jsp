@@ -7,9 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/reste.css">
+<link rel="stylesheet" href="/resources/css/main.css">
 <link rel="stylesheet" href="/resources/css/table.css">
 </head>
 <body>
+
+
+
 
 <h1 class="title"> bank Book page</h1>
 <table>
