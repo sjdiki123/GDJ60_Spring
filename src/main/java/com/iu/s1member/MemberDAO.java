@@ -7,6 +7,13 @@ import com.iu.s1.util.DBConnection;
 
 public class MemberDAO {
 
+	
+	
+	
+	
+	
+	
+	
 //setaddMenber	
 	
 	public int setaddMember(MemberDTO memberDTO ) throws Exception{
@@ -20,8 +27,8 @@ public class MemberDAO {
 		st.setString(1, memberDTO.getId());
 		st.setString(2, memberDTO.getPw());
 		st.setString(3, memberDTO.getAddress());
-		st.setString(4, memberDTO.getName());
-		st.setString(5, memberDTO.getPhone());
+		st.setString(4, memberDTO.getMembername());
+		st.setString(5, memberDTO.getMemberphone());
 		st.setString(6, memberDTO.getEmail());
 		
 		
@@ -40,8 +47,8 @@ private static void mian(String[] args) {
 	MemberDTO memberDTO = new MemberDTO();
 	memberDTO.setId("id");
 	memberDTO.setPw("pw");
-	memberDTO.setName("name");
-	memberDTO.setPhone("phone");
+	memberDTO.setMembername("name");
+	memberDTO.setMemberphone("phone");
 	memberDTO.setAddress("address");
 	memberDTO.setEmail("eamil");
 	try {
