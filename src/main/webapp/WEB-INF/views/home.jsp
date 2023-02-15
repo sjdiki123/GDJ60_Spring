@@ -41,3 +41,6 @@
 </header>
 </body>
 </html>
+<div>
+<h1>${sessionScope,memebr.name}</h1>
+</div>

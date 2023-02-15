@@ -8,16 +8,9 @@ public class MemberDTO {
 	private String pw;
 	private String address;
 	private String membername;
-	public List<RoleDTO> getRoleDTOs() {
-		return roleDTOs;
-	}
-	public void setRoleDTOs(List<RoleDTO> roleDTOs) {
-		this.roleDTOs = roleDTOs;
-	}
 	private String email;
 	private String memberphone;
-	private List<RoleDTO> roleDTOs;
-
+	private RoleDTO roleDTO;
 	public String getId() {
 		return id;
 	}
@@ -36,11 +29,11 @@ public class MemberDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getName() {
+	public String getMembername() {
 		return membername;
 	}
-	public void setName(String name) {
-		this.membername = name;
+	public void setMembername(String membername) {
+		this.membername = membername;
 	}
 	public String getEmail() {
 		return email;
@@ -48,12 +41,19 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
+	public String getMemberphone() {
 		return memberphone;
 	}
-	public void setPhone(String phone) {
-		this.memberphone = phone;
+	public void setMemberphone(String memberphone) {
+		this.memberphone = memberphone;
 	}
+	public RoleDTO getRoleDTO() {
+		return roleDTO;
+	}
+	public void setRoleDTO(RoleDTO roleDTO) {
+		this.roleDTO = roleDTO;
+	}
+
 	
 
 	
