@@ -2,10 +2,21 @@ package com.iu.s1.util;
 
 public class Pager {
 
+	// 검색종류 (사용할 column)
+	private String kind;
+	//검색오 
+	private String search;
+	
+	
+	
 	//client 가 보고 싶은 페이지 번호 (parameter)
 	private long page;
 	//한페이지에 출력할 row의 갯수
 	private long perPage;
+	
+	
+	//한브럭당 추력할 번호의 갯수
+	private Long perBlock;
 	
 	//table에서 조회할 시작번호 
 	private Long startRow;
@@ -73,6 +84,60 @@ public class Pager {
 	}
 	
 	
+	public String getKind() {
+		return kind;
+	}
+
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+
+	public String getSearch() {
+		if(search == null) {
+			search="";
+		}
+		return    search; //"%"+search+"%";
+	}
+
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+
+	public Long getStartNum() {
+		return startNum;
+	}
+
+
+	public void setStartNum(Long startNum) {
+		this.startNum = startNum;
+	}
+
+
+	public Long getLastNum() {
+		return lastNum;
+	}
+
+
+	public void setLastNum(Long lastNum) {
+		this.lastNum = lastNum;
+	}
+
+
+	public Long getPerBlock() {
+	
+		return perBlock;
+	}
+
+
+	public void setPerBlock(Long perBlock) {
+		this.perBlock = perBlock;
+	}
+
+
 	public Long getStartRow() {
 		return startRow;
 	}

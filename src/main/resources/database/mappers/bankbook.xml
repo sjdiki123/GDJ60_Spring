@@ -5,7 +5,49 @@
   
  <mapper namespace="com.iu.s1.bankBook.BankBookDAO">
   
+  
+  
+  <sql id="searchConditon">
+  <if test="kind =='contents'">
+   BOOKNUM BOOKDETAIL LIKE'%'||#{search} || '%'
+   </if>
+    
+   <if test="kind =='titlr'">
+   BOOKNUM BOOKNAME LIKE'%'||#{search} || '%'
+   </if>
+  
+  </sql>
+  <sql id="searchConditon2">
+  
+   WHERE 
+				 
+				  <choose>
+				 <when test="kind=='contents'">
+				 BOOKDERAIL
+				 </when>
+				<otherwise>
+				BOOKNAME
+				</otherwise>
+				 </choose>
+
+  </sql>
+  
+  
+  
    <select id="getBankBook"></select>
+   
+<select id="getBankBookCount" parameterType="Pager" resultType="Long"> 
+   
+   <if test="kind =='contents'">
+   BOOKNUM BOOKDETAIL LIKE'%'||#{search} || '%'
+   </if>
+    
+   <if test="kind =='title">
+   BOOKNUM BOOKNUM LIKE'%'||#{search} || '%'
+   </if>
+   
+ 
+ 	  </select>
  	
  	<select id="getBankBookDetail" parameterType="BankBookDTO" resultType="BankBookDTO">
  		SELECT * FROM BANKBOOK WHERE BOOKNUM=#{bookNum}
@@ -26,9 +68,20 @@
  		WHERE BOOKNUM=#{bookNum}
  	</update>
  	
- 	<select id="getBankbooklist"  parameterType="BankBookDTO">
- 	
- 	
+ 	<select id="getBankbooklist"  parameterType="Pager" resultType="BankBookDTO">
+				 	SELECT * FROM 
+				(
+				SELECT ROWNUM R,B.*FROM
+				(
+				SELECT *FROM BANKBOOK 
+				<include refid="searchConditon"></include>
+				
+			
+				  LIKE '%'#{search}%
+				 
+				ORDER BY BOOKNUBER DESC ) B)
+				WHERE R BETWEEN #{stratPage} AND #{lastPage}
+				 	
  	</select>
  	
  	

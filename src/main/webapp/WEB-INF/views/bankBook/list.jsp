@@ -77,7 +77,26 @@
     </li>
   </ul>
 </nav>
+<!--  검색창 -->
+<div class ="row">
+<form class="row g-3">
+  <div class="col-auto">
+   <label for="staticEmail2" class="visually-hidden">Email</label>
+  <select class="form-select" aria-label="Default select example">
+  <option value="title">상품명</option>
+  <option value="contents">상품내용</option>
+  
+</select>
+  <div class="col-auto">
+    <label for="search" class="visually-hidden">Search</label>
+    <input type="text" class="form-control" id="search" placeholder="검색어">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">검색</button>
+  </div>
+</form>
 
+</div>
 
 
 <div class = "row col - md-7 mx-auto">

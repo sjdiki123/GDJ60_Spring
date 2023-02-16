@@ -22,7 +22,7 @@ public class BankbookService {
 		pager.setStartRow(s);
 		pager.setLastRow(l);
 		
-		return bankbookDAO.getBankBookList(pager);
+		return bankbookDAO.getBankBookList();
 	}
 	
 	
