@@ -36,8 +36,5 @@ public class BankbookDAO {
 		
 	}
 		
-		public int setBankBookimgAdd(BankBookimgDTO bankBookimgDTO)throws Exception{
-			return sqlSession.insert(NAMESPACE, bankBookimgDTO, bankBookimgDTO);
-		}
-	
+		
 }

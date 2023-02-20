@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:import url="../template/header.jsp"></c:import>
     <h1>   detail page</h1>
     <c:if test="${not empty dto }"></c:if>
      <h3>Num : ${deo.bookNum}</h3>
@@ -17,7 +18,14 @@
      <h3>Sale : ${deo.bookSale}</h3>
      
      
-<a href="./delete?bookNum">상품삭제</a>
+     <div>
+     <c:if test="${not empty dto.bankBookimgDTO}">
+     <img src ="../resources/upload/bankBook/${dto.bnkBookimgDTO}">
+     </c:if>
+     </div>
+     
+     
+<a href="./delete?bookNum =${ dto.bookNum}">상품삭제</a>
 <c:if test=" ${empty dto }">
 <h3> 존재하지 않는 상품입니다</h3>
 </c:if>

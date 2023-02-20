@@ -43,7 +43,7 @@ private ServletContext servletContext;
 	public  int setBankBookAdd(BankbookDTO bankbookDTO ) throws Exception{
 		//1.file을 hdd에 저장 
 		String realpath=servletContext.getRealPath(null);
-		String fileName= fileManager.fileSave(pic, realpath);
+	
 		BankBookimgDTO bankBookimgDTO = new BankBookimgDTO();
 		bankBookimgDTO.setFileName(null);
 		bankBookimgDTO.setOriName(null);
