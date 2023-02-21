@@ -36,6 +36,6 @@ console.log(input3.value);
 
  btn.onclick=function(){
 
-input2.focus();
+input2.focus(); 
 
  } 
