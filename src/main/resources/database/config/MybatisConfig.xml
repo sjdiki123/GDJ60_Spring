@@ -10,7 +10,11 @@
   <typeAlias type="com.iu.s1.product.ProductDTO" alias="ProductDTO"/>
   <typeAlias type="com.iu.s1.bankbook.BankbookDTO" alias="bankbookDTO"/>
   <typeAlias type="com.iu.s1.bankbook.BankbookDTO" alias="bankbookDTO"/>
-  
+ 
+
+ <typeAlias type="com.iu.s1.board.BbsDTO" alias="BbsDTO"/>
+ <typeAlias type="com.iu.s1.board.BoardDTO" alias="BoardDTO"/>
+ 
   <typeAlias type="java.lang.Long"  alias= "Long"/>
   
   </typeAliases>

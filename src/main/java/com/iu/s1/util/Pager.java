@@ -2,6 +2,14 @@ package com.iu.s1.util;
 
 public class Pager {
 
+	private Long bookNum;
+	
+	
+	
+	
+	
+	
+	
 	// 검색종류 (사용할 column)
 	private String kind;
 	//검색오 
@@ -170,6 +178,16 @@ public class Pager {
 
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+
+	public Long getBookNum() {
+		return bookNum;
+	}
+
+
+	public void setBookNum(Long bookNum) {
+		this.bookNum = bookNum;
 	}
 
 
