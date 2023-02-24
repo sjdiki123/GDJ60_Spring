@@ -14,12 +14,14 @@ public class Noticetest  extends MyTestCase{
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
-
-	public void getList() throws Exception{
+    @Test
+	public void setboardAddTest() throws Exception{
 		
 		
-	Pager pager = new Pager();
-
+    NoticeDTO noticeDTO = new NoticeDTO();
+    noticeDTO.setTitle(null);
+    noticeDTO.setWriter(null);
+    noticeDTO.setContents(null);
 		
 		
 		

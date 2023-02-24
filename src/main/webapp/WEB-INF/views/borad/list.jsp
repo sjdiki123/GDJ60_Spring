@@ -12,6 +12,14 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
+<div class="row my -5">
+<h1> ${boradName }</h1>
+
+</div>
+
+
+
+
 <div class="container-fluid">
  <div class="row">
  <table class="table table-hover">
@@ -29,6 +37,12 @@
  
  <tr>
  <tb>${dto.num}</tb>
+ 	<td>
+ 	<c:catch>
+ 	<!--  notice에는 depth가 없어서 exception아 발생 -->
+    <c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+    </c:catch>
+ 	<a href="./detail">${dto.title}</a></td> 
   <tb>${dto.title}</tb>
   <tb>${dto.writer}</tb>
   <tb>${dto.regDate}</tb>
