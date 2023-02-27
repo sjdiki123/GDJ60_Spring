@@ -47,4 +47,14 @@
   VALUES(NOTICE_SEQ.NEXTVAL,#{title},#{contents},#{writer})
   </insert>
   	
+  	
+  	
+  	
+  	<delete id="getBoradDelete" parameterMap=" BbsDTO">
+  	
+  	</delete>
+  	
+  	
+  	
+  	
   </mapper>

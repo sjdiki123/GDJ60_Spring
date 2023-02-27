@@ -36,9 +36,19 @@ public class Pager {
 	private Long startNum;
 	private Long lastNum;
 	
+	 private Long makeNum;
 	
 	
-	
+	public Long getMakeNum() {
+		return makeNum;
+	}
+
+
+	public void setMakeNum(Long makeNum) {
+		this.makeNum = makeNum;
+	}
+
+
 	public void makRow() {
 		
 		this.startRow =(this.page-1) *this.perPage+1;
@@ -189,6 +199,7 @@ public class Pager {
 	public void setBookNum(Long bookNum) {
 		this.bookNum = bookNum;
 	}
+
 
 
 	

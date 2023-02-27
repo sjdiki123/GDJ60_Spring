@@ -19,9 +19,25 @@
   <h3>${dto.title}</h3>
   <h3>${dto.writer}</h3>
   <h3>${dto.contents}</h3>
+  
+  <c:forEach items="${dto.boardFileDTOs}" var="fileDTO">\
+  <a href="../resources/upload/${boardName}/${fileDTO.fileName}">${fileDTO,oriName}</a>
+  
+  </c:forEach>
+  
 <c:if test="${BoardName ne 'notice'}">
       <a href="./reply?num=${dto.num}" class="btn-btn-danger">답글</a>
       </c:if>
+      
+ <form action="./update" id="frm">
+<input type="hidden" name="num" value="${bto.num}">
+      <button id="update" type="button" class="btn-btm-primaey"> UPDATE</button>
+      <button id="delete" type="button" class="btn-btm-info"> DELETE</button>
+
+ </form>
+<div>
+
+</div>
 
 </div>
 </div>

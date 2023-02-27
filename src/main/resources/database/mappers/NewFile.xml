@@ -36,10 +36,34 @@
 	  	WHERE R BETWEEN #{startRow} AND #{lastRow} 
   	</select>
   
-  <select id="getBoardDetail" parameterType="BoardDTO" resultType="QnaDTO">
-  	SELECT*FROM QNA WHERE NUM =#{NUM}
+  <select id="getBoardDetail" parameterType="BoardDTO" resultMap="getBoardDetailResult">
+  	SELECT Q.*,QF.*
+FROM QNA Q
+ LEFT JOIN
+ QNAFILES QF
+ ON(Q.NUM = QF.NUM)
+WHERE Q.NUM=#{NUM}
   	
   	</select>
+  	
+  	<resultMap type="QnaDTO" id="getBoardDetailResult">
+  	<id column="num" property="num"/>
+  	
+  	<result  column="title" property="title"/>
+  	<result  column="writer" property="writer"/>
+  	<result  column="contents" property="contrnts"/>
+  	<result  column="regDate" property="regDate"/>
+  	<result  column="hit" property="hit"/>
+  	<result  column="depth" property="depth"/>
+  	<!-- oftype은 제너릭타입 대신 사용가능  -->
+  	<collection property="boardFileDTOs" javaType="List" ofType="BoardFileDTO">
+  	<id  column="fileNum" property="fileNum" />
+  	<result column="fileName" property="fileName"/>
+  	<result column="oriName" property="oriName"/>
+  	
+  	</collection>
+  	
+  	</resultMap>
   
   	 <insert id="setBoardAdd" parameterType=" BbsDTO ">
   	 <selectKey keyProperty="num" resultType="Long" order="BEFORE">
@@ -49,6 +73,14 @@
 VALUES(#{num}, #{title}, #{contents}, #{writer}, sysdate,0, #{num}, 0, 0)  	 
   	 
   	 
+  	 </insert>
+  	 
+  	 
+  	 
+  	 <insert id="setBoardFileAdd" parameterType="BoardFileDTO">
+  	 
+  	 INSERT INTO QNAFILES(FILENUM ,NUM FILENAME,ORINAME)
+  	 VALUES(QNA)
   	 </insert>
   	 
   	 <update id="setStepUpdate"  parameterType="QnaDTO">
@@ -66,7 +98,15 @@ VALUES(#{num}, #{title}, #{contents}, #{writer}, sysdate,0, #{num}, 0, 0)
 VALUES(QNA_SEQ.NEXTVAL, #{title}, #{contents}, #{writer}, sysdate,0, #{ref},#{step}, #{depth})  	
   	
   	
+
+  	
   	</insert>
+  	 <delete id="setBardDelete" parameterMap="BbsDTO">
+DELETE QNA WHERE NUM=#{num}
+  	 </delete>
   	 
+  	 <select id="getBoardFileList"  parameterType="BbsDTO"  resultType="BoaedFileDTO">
+  	 SELECT * FROM QNAFLIES WHERE NUM=#{num} 
   	 
+  	 </select>
   </mapper>

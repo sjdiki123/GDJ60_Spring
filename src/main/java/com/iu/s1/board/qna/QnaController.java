@@ -1,6 +1,9 @@
 package com.iu.s1.board.qna;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.s1.board.BbsDTO;
@@ -51,9 +55,9 @@ public ModelAndView setBoardAdd() throws Exception{
 }
 
 @PostMapping("add")
-public ModelAndView setBoardAdd(QnaDTO qnaDTO) throws Exception{
+public ModelAndView setBoardAdd(QnaDTO qnaDTO ,MultipartFile[] files, HttpSession session) throws Exception{
 	ModelAndView mv = new ModelAndView();
-int result=	qnaService.setBoardAdd(qnaDTO);
+int result=	qnaService.setBoardAdd(qnaDTO,files,session);
 	
 	String message  =" 등록 실패";
 	if(result>0) {
@@ -96,7 +100,7 @@ public ModelAndView setReplyAdd(BoardDTO boardDTO) throws Exception{
 @PostMapping("reply")
 public ModelAndView setReplyAdd(QnaDTO qnaDTO) throws Exception{
 	ModelAndView mv = new ModelAndView();
-	int result=	qnaService.setBoardAdd(qnaDTO);
+	int result=	qnaService.setBoardAdd(qnaDTO, null, null);
 
 	String message  =" 등록 실패";
 	if(result>0) {
@@ -109,7 +113,21 @@ public ModelAndView setReplyAdd(QnaDTO qnaDTO) throws Exception{
 	return mv;
 	
 }
-
+@PostMapping("delete")
+public ModelAndView setBoradDelete(BbsDTO bbsDTO ,HttpSession session)throws Exception{
+	ModelAndView mv = new ModelAndView();
+	mv.setViewName("common/result");
+	
+	int result = qnaService.setBoaardDelete(bbsDTO,session);
+	String message ="삭제 시ㅏㄹ패";
+	
+	if(result>0) {
+		message ="성공";
+		
+	}
+	
+	return mv;
+}
 
 
 }

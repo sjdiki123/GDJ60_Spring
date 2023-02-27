@@ -4,13 +4,24 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+@Component
 public class FileManager {
 
+	//file 삭제 
+	public boolean fileDelete(String path, String filName)throws Exception{
+		File file = new File(path,filName);
+		
+		
+		return file.delete();
+	}
+	
+	
 	// file을 Hdd에 저장 
-	public void fileSave(MultipartFile multipartFile, String path) throws Exception{
+	public String fileSave(MultipartFile multipartFile, String path) throws Exception{
 		//1 어디에 저장 할 것이가?
 		// / resources/upload/bankBook/..
 
@@ -37,9 +48,12 @@ name = name+"_"+multipartFile.getOriginalFilename();
 	 
 	// multipartFile.transferTo(file);
 	 FileCopyUtils.copy(multipartFile.getBytes() ,file);
+	return name;
 	 
 	 
 	
 	}
+
+
 	
 }
