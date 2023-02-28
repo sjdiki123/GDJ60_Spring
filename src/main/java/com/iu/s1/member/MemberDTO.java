@@ -1,16 +1,17 @@
-package com.iu.s1member;
+package com.iu.s1.member;
 
 import java.util.List;
 
 public class MemberDTO {
-
+	
 	private String id;
 	private String pw;
+	private String name;
 	private String address;
-	private String membername;
+	private String phone;
 	private String email;
-	private String memberphone;
 	private RoleDTO roleDTO;
+	
 	public String getId() {
 		return id;
 	}
@@ -23,29 +24,29 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getMembername() {
-		return membername;
+	public String getPhone() {
+		return phone;
 	}
-	public void setMembername(String membername) {
-		this.membername = membername;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getMemberphone() {
-		return memberphone;
-	}
-	public void setMemberphone(String memberphone) {
-		this.memberphone = memberphone;
 	}
 	public RoleDTO getRoleDTO() {
 		return roleDTO;
@@ -55,9 +56,14 @@ public class MemberDTO {
 	}
 
 	
+	
+	
+
+}
+	
 
 	
 	
 	
 	
-}
+

@@ -1,4 +1,4 @@
-package com.iu.s1member;
+package com.iu.s1.member;
 
 public class RoleDTO {
 	

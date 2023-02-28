@@ -29,11 +29,14 @@
       <a href="./reply?num=${dto.num}" class="btn-btn-danger">답글</a>
       </c:if>
       
+      
+      
  <form action="./update" id="frm">
 <input type="hidden" name="num" value="${bto.num}">
-      <button id="update" type="button" class="btn-btm-primaey"> UPDATE</button>
+<c:if test="">
+      <button id="update" type="button"  class="btn-btm-primaey"> UPDATE</button>
       <button id="delete" type="button" class="btn-btm-info"> DELETE</button>
-
+</c:if>
  </form>
 <div>
 
@@ -43,5 +46,6 @@
 </div>
 </body>
 <c:import url="../template/common_js.jsp"></c:import>
+<script type="text/javascript" src="../resources/js/boardForm.js"></script>
 
 </html>
