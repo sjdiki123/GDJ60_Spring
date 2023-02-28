@@ -10,6 +10,7 @@ public interface BoardService extends BbsService {
 
 		int setBoaardDelete(BbsDTO bbsDTO, HttpSession session) throws Exception;
 
+		public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception;
 		
 		
 	}

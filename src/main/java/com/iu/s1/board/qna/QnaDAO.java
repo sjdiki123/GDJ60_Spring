@@ -25,7 +25,6 @@ public class QnaDAO implements BoardDAO {
 		return 0;
 	}
 	
-	
 	@Override
 	public Long getTotalCount(Pager pager) throws Exception {
 		// TODO Auto-generated method stub
@@ -80,4 +79,16 @@ public class QnaDAO implements BoardDAO {
 		// TODO Auto-generated method stub
 		return sqlession.selectList(MESPACE);
 	}
+	
+	
+	
+	@Override
+	public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	
 }

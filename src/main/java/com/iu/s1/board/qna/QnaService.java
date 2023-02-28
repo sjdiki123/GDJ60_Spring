@@ -133,4 +133,9 @@ public class QnaService  implements BoardService{
 		return 0;
 	}
 	
+	@Override
+	public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return qnaDAO.getBoardFileDeteil(boardFileDTO);
+	}
 }

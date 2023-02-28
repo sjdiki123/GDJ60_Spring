@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.iu.s1.board.BbsDTO;
 import com.iu.s1.board.BoardDTO;
+import com.iu.s1.board.BoardFileDTO;
 import com.iu.s1.board.BoardService;
 import com.iu.s1.util.Pager;
 
@@ -125,9 +126,29 @@ public ModelAndView setBoradDelete(BbsDTO bbsDTO ,HttpSession session)throws Exc
 		message ="성공";
 		
 	}
+	mv.addObject("result", message);
+	mv.addObject("url", "./list");
 	
 	return mv;
 }
+@GetMapping("fileDown")
+public ModelAndView getFileDown(BoardFileDTO boardFileDTO) throws Exception{
+ModelAndView mv = new ModelAndView();
+   boardFileDTO =qnaService.getBoardFileDeteil(boardFileDTO);
+
+ mv.addObject("boardFile",boardFileDTO);
+ mv.setViewName("fileDownView");
+   
+return mv;
+	
+}
+
+
+
+
+
+
+
 
 
 }

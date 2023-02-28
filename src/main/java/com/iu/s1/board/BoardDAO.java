@@ -21,8 +21,11 @@ public interface BoardDAO  extends BbsDAO{
 	//update
 	
 	//delete
-	public 
+	
 	
 	public List<BoardFileDTO> getBoardFileList(BbsDTO bbsDTO) throws Exception;
+	
+	public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception;
+	
 	
 }

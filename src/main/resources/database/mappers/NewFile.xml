@@ -109,4 +109,8 @@ DELETE QNA WHERE NUM=#{num}
   	 SELECT * FROM QNAFLIES WHERE NUM=#{num} 
   	 
   	 </select>
+  	 
+  	 <select id="getBoardFileDetail" parameterType=  " BoardFileDTO"  >
+  	 SELECT * FROM QNAFLIES WHERE FILENUM=#{filnum}
+  	 </select>
   </mapper>

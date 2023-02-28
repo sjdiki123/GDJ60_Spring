@@ -65,4 +65,9 @@ public class NoticeDAO implements BoardDAO {
 		return null;
 	}
 
+	@Override
+	public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
