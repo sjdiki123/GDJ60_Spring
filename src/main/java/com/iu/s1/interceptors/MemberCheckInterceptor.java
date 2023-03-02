@@ -12,8 +12,35 @@ public class MemberCheckInterceptor  extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// TODO Auto-generated method stub
-		return super.preHandle(request, response, handler);
+	
+		System.out.println("member             ");
+		Object obj = request.getSession().getAttribute("member");
+		
+		if(obj != null) {
+			
+			return true;
+		}
+	
+		System.out.println("로그인 안한 경우 ");
+		//1.Fowarad Jsp
+		
+		
+		
+		//2.Redoirect
+		response.sendRedirect("../../../../member/");
+		
+		
+		return false;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,

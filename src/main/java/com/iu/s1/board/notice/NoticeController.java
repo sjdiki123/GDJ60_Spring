@@ -92,5 +92,23 @@ return mv;
 
 
 }
+
+@GetMapping("update")
+  public ModelAndView setBoradUpdate (BoardDTO boardDTO) throws Exception{
+	  ModelAndView mv = new ModelAndView();
+	   boardDTO  =  noticecService.getBoardDetail(boardDTO);
+		mv.addObject("dto",boardDTO);
+		mv.setViewName("board/update");
+	  
+	  return mv;
+	  
+  }
+
+
+
+
+
+
+
 }
  
