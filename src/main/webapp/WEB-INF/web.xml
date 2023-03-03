@@ -33,7 +33,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <filter>
-    <display-name>TestFilter</display-name>
+    <display-name>TestFilter</display-name>  
     <filter-name>TestFilter</filter-name>
     <filter-class>com.iu.s1.filters.TestFilter</filter-class>
   </filter>
