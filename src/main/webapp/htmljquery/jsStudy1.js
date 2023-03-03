@@ -1,5 +1,5 @@
 const btn1 =document.querySelector("#btn1");// document.getElementById("btn1");
-const button =document.getElementsByClassName("button");//document.querySelectorAll(".buttons") //document.getElementsByClassName("button");
+const button =document.querySelectorAll(".buttons") //document.getElementsByClassName("button");
 
 const d1 = document.querySelector("#d1>.buttons li");
 
@@ -36,13 +36,24 @@ console.log("btn1");
 
 })
 
-for( let b of button){
-    b.addEventListener("click",function(){
-     console.log("buttons");
-    })
-}
+// for( let b of button){
+//     b.addEventListener("click",function(){
+//      console.log("buttons");
+//     })
+// }
 
-alert(button);
-alert(ar);
-console.log(buttons);
+// alert(button);
+// alert(ar);
+console.log(button);
 console.log(ar);
+
+
+
+button.forEach(function(v,i){
+v.addEventListener('click' ,function(){
+   console.log('click');
+})
+})
+
+console.log(parseInt('1')+1);
+console.log('1'*1+1);
