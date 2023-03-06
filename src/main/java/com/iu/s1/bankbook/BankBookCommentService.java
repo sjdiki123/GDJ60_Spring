@@ -2,8 +2,11 @@ package com.iu.s1.bankbook;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.iu.s1.board.BbsDAO;
 import com.iu.s1.board.BbsDTO;
@@ -34,7 +37,12 @@ pager.makeNum();
 	}
 
 	@Override
-	public int setBoaardDelete(BbsDTO bbsDTO) throws Exception {
+	public int setBoaardDelete(BbsDTO bbsDTO ,HttpSession httpSession) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int setBoardAdd(BbsDTO bbsDTO, MultipartFile[] multipartFiles, HttpSession session) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}

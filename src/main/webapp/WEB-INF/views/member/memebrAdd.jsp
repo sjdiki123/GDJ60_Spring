@@ -75,6 +75,6 @@
 </div>
 <c:import url="../template/common_js.jsp"></c:import>
 
-><script src="../resources/mamberjs/memberJoin.js"></script>
+><script src="../resources/js/memberJoin.js"></script>
 </body>
 </html>

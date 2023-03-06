@@ -28,10 +28,37 @@ const btn=document.getElementById("btn");
 //let emailcheck=false;
 let checks = [false,false,false,false,false,false,false] 
 
+
 //id
 id.addEventListener("blur", function(){
+// 중복 검사
+let xhttp = new XMLHttpRequest();
+
+//url method
+xhttp.open("POST" , "./memberIdchcek")
+
+
+//header
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+//요청을 발생 post일 경우 paramter 전송
+xhttp.send("id="+id.value);
+
+
+// 응답 처리 
+xhttp.addEventListener("readystatechange",function(){
+    if(this.readyState==4&& this.status==200){
+     
+        console.log(this.responseText);
+    }
+    if(this.readyState==4&& this.status !==200){
+
+    }
+});
+
+
 if(id.value.lenght==0){
-  id2.innerHTML="";
+  id2.innerHTML="정상적인 아이디";
   //idcheck = true;
   checks[0]=true;
   id2.classList.add("blueResult");
