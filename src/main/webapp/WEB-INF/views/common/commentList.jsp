@@ -9,11 +9,11 @@
       <td>${dto.writer}</td>
       <td>${dto.regDate}</td>
       <td><c:if test="${member.id eq dto.writer}">
-         <button class="btn btn-info" data-comment-num="${dto.num}">댓글 수정</button>
+         <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#contentsModal"">UPDATE</button>
       </c:if>
       </td>
       <td><c:if test="${member.id eq dto.writer}">
-         <button class="btn btn-danger" data-comment-num="${dto.num}">댓글 삭제</button>
+         <button class="btn btn-danger" data-comment-num="${dto.num}">DELETE</button>
       </c:if>
       </td>
    </tr>
