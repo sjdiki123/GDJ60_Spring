@@ -12,5 +12,8 @@ public interface BoardService extends BbsService {
 
 		public BoardFileDTO getBoardFileDeteil(BoardFileDTO boardFileDTO) throws Exception;
 		
-		
-	}
+		public int serBoardUpdate(BbsDTO bbsDTO,MultipartFile[] multipartFiles,HttpSession session ,Long[] fLongs) throws Exception;
+
+	
+   
+}

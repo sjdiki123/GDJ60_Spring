@@ -113,4 +113,14 @@ DELETE QNA WHERE NUM=#{num}
   	 <select id="getBoardFileDetail" parameterType=  " BoardFileDTO"  >
   	 SELECT * FROM QNAFLIES WHERE FILENUM=#{filnum}
   	 </select>
+  	 
+  	 <delete id=" setBoardFileDelete" parameterType="Long">
+  	 DELETE QNAFILS WHEREFILENUM=#{filong}
+  	 </delete>
+  	 
+  	 
+  	 <update id="setBoardUpdate" parameterType="BbsDTO">
+  	 UPDATE QNA SET TITLE=#{title}, CONTNTS={contents}
+  	 </update>
+  	 
   </mapper>

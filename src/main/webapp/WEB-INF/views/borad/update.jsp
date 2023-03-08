@@ -32,11 +32,11 @@
 			</div>	
 
 
-	<div id="fileList">
-			<!-- 	<div class="mb-3">
+	<div id="fileList" class="my-5">
+			<div class="mb-3">
 				<label for="files" class="form-label">Image</label>
 				<input type="file" class="form-control" id="files" name="files">
-				</div> -->
+				</div> 
 				<button  type="button" id="fileAdd">ADD</button>
 			
 			
@@ -53,8 +53,10 @@
 </div>	
 <script src="../resources/js/fileManger.js"></script>
 <script>
-	setMax(3);
-	// setParam('f');
+setMax(5);
+setParam('addFiles');
+setCount('${dto.boardFileDTOs.size()}');
+$("#contents").summernote();
 </script>
 
 <c:import url="../template/common_js.jsp"></c:import>

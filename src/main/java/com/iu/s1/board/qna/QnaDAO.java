@@ -87,6 +87,12 @@ public class QnaDAO implements BoardDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public int setBoardFileDelete(Long fiLong) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 	

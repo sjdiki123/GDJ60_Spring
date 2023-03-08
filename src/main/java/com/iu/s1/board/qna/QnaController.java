@@ -153,7 +153,17 @@ public ModelAndView setBoardUpdate(BoardDTO boardDTO)throws Exception{
 	return mv;
 }
 
-
+@GetMapping("update")
+public ModelAndView setBoardUpdate(BoardDTO boardDTO,MultipartFile []addFiles,HttpSession session , Long [] filLongs)throws Exception{
+	ModelAndView mv = new ModelAndView();
+ int result =  qnaService.serBoardUpdate(boardDTO, addFiles, session, filLongs);
+	
+ mv.setViewName(getBoradName());
+ mv.addObject(mv);
+ 
+	
+	return mv;
+}
 //------------------------------------------------------------
 
 @ExceptionHandler(NullPointerException.class)

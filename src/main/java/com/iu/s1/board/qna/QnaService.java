@@ -4,7 +4,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.object.UpdatableSqlQuery;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -138,4 +141,36 @@ public class QnaService  implements BoardService{
 		// TODO Auto-generated method stub
 		return qnaDAO.getBoardFileDeteil(boardFileDTO);
 	}
+
+	@Override
+	public int serBoardUpdate(BbsDTO bbsDTO, MultipartFile[] multipartFiles, HttpSession session, Long[] fLongs)
+			throws Exception {
+
+		int result = qnaDAO.setBoardUpdate(bbsDTO);
+		for(Long fLong: fLongs) {
+			qnaDAO.setBoardFileDelete(fLong);
+		}
+		String realPath=session.getServletContext().getRealPath("resources/upload/qna/");
+		System.out.println(realPath);
+		
+		for(MultipartFile multipartFile: multipartFiles) {
+			
+			if(multipartFile.isEmpty()) {
+				continue;
+			}
+			
+			String fileName = fileManager.fileSave(multipartFile, realPath);
+					
+			//DB INSERT 
+			BoardFileDTO boardFileDTO = new BoardFileDTO();
+			boardFileDTO.setNum(bbsDTO.getNum());
+			boardFileDTO.setFileName(fileName);
+			boardFileDTO.setOrlName(multipartFile.getOriginalFilename());
+			
+			result=qnaDAO.setBoardFileAdd(boardFileDTO);
+			
+		}
+		return 0;
+	}
+	
 }

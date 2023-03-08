@@ -1,18 +1,8 @@
-const replyAdd = document.getElementById("replyAdd");
-const replyContents = document.getElementById("replyContents");
-const commentListResult = document.getElementById("commentListResult");
-const contentsConfirm =document.getElementById("contentsConfirm")
-const closeModal = document.getElementById("closeModal");
-
-
-
 
 
 
 // 댓글 등록
 replyAdd.addEventListener("click", function(){
-
-
 //js에서 사용할 가상의 from태그 생성
 const form= new  FormData();
 form.append("contents,", replyContents.value);//
@@ -79,7 +69,9 @@ body: "bookNum="+replyAdd.getAttribute('data-book-bookNum')+"&page="+page,
 
 }).then((response)=>response.text())
 .then((res)=>{
-    commentListResult.innerHTML=res.trim();
+
+
+    $("#commentListResult").html=res.trim();
 })
 
 
@@ -104,14 +96,13 @@ console.log("count :" ,count);
 
 
 }
-
-commentListResult.addEventListener("click",function(e){
-    let pageLink = e.target;
-    if(e.target.classList.contains("page-link")){
+//page
+$("#commentListResult").on("click","page-link",function(e){
+   
         let page = pageLink.getAttribute("date-board - page");
         getList(page);
 
-    }
+    
 
     e.preventDefault();
 });
@@ -123,9 +114,8 @@ commentListResult.addEventListener("click",function(e){
         fetch("../bankBookComment/delete",{
 
             method: 'POST',
-
-            headers:{"Content-type":"application/x-www-form-urlencoded" },
-            body:"num"=del.getAttribute("data-comment-num")
+            headers:{"Content-type":"application/x-www-form-urlencoded"},
+            body:"num"=del.getAttribute("data-comment-num"),
         }).then((response)=>response.text())
     
 
@@ -161,27 +151,16 @@ commentListResult.addEventListener("click",function(e){
 });  
 
 // update
-commentListResult.addEventListener("click",function(e){
-let updatebutton =e.target;
-if(updatebutton.target.classList.contains("update")){
-//console.log(updatebutton)
-let num = updatebutton.getAttribute("data-comment-num");
-let contents= document.getElementById("contents"+num);
-let Content =document.getElementById("contents");
-let contentsTextArea= document.getElementById('comtents');
-//value
-contentsTextArea.value=contents.innerText;
-  contentsConfirm.setAttribute("data-comment-num",num);               
+$("#commentListResult").on("click","update",function(e){
 
-}
+let num = $(this).attr("data-comment-num");
+$("#contents").val($())
 e.preventDefault();
 
 });
 
 
-contentsConfirm.addEventListener("click",function(){
-console.log("update psot");
-let updateContents = document.getElementById("contents").value;
+$("#contentsConfirm").click(function(){
 let num = contentsConfirm.getAttribute("data-comment-num")
 fetch("../bankBook/comment/update",{
 method:'POST',
@@ -202,9 +181,6 @@ body:"num"=del.getAttribute("data-comment-num")
 });
 
  
-
-
-
 
 
 //     let xhttp = new XMLDocument();
@@ -229,3 +205,58 @@ body:"num"=del.getAttribute("data-comment-num")
 
 
 });
+
+
+
+
+
+
+
+
+//test 후 삭제 예정 
+
+ //const b1 = document.getElementById("b1")
+// const b1 = document.querySelector("#b1")
+// $('#b1').click(()=>{
+// console.log("cliek");
+// });
+
+
+// $(".ch").click(function(e){
+// console.log("E:" ,e)
+// console.log(e.target);
+// console.log($(e.target).val());
+
+// })
+
+
+// $(".ch").click((e)=>{
+// console.log("E:" ,e)
+// console.log(e.target);
+// console.log($(e.target).val());
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
