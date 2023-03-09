@@ -41,27 +41,60 @@ $("#fileList").on ("click","dels" ,function(e){
  
   
  $(".deleteCheck").click(function(){
-if($(this).prop('checked')){
     let result= confirm("파일이 영구히 삭제 됩니다 ");
     if (result){
+        let flieNum = $(this).val();
+        $.ajax({
+            type:'POST',
+            url :'./boradFileDelete',
+            data:{
+                fileNum:fileNum
+            },
+            success:function(response){
+                if(response.teim()>0){
+                    alert("삭제 되었습니다 ");
+                    console.log(ch);
+                    $(ch).parent().parent().remove();
+                    count--;
+                }else{
+                    alert("삭제 실패 <br> 관리자에게 문의 하세요 ");
 
-        count--;
+                }
+
+            },
+            error: function(){
+
+            }
+             
+        
+        })
+
+
+
+
+    //     //ajax DB에서 삭제 
+    //     //fatch
+    //     fetch("URL?p=1" ,{
+
+    //         method:'GET'
+    //     }).then((response)=>response.text())
+    //     .then((res)=>{
+
+    //     })    
+// $.get("URL?p=1 ",function(response){
+
+// })
+
+// $.post("URL",{p:1},function(res){})
+
+
+
+
     }else{
         $(this).prop("checked", false);
 
 
     }
-}else{
-    if(count==5){
-        console.log("idx:" ,idx)
-        $("ef " + (idx-1)).remove();
-        count--;
-        return;
-    }
-    count++;
-
-}
-
  });
 
 

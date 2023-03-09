@@ -166,6 +166,18 @@ public ModelAndView setBoardUpdate(BoardDTO boardDTO,MultipartFile []addFiles,Ht
 }
 //------------------------------------------------------------
 
+@PostMapping("delete")
+public ModelAndView setBoardFileDelete(Long fLong ) throws Exception{
+	ModelAndView mv = new ModelAndView();
+	int result = qnaService.setBoardFileDelete(fLong);
+	
+	return mv;
+}
+
+
+
+
+
 @ExceptionHandler(NullPointerException.class)
 public  ModelAndView fixException() {
 	ModelAndView mv = new ModelAndView();
