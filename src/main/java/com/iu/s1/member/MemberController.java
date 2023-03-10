@@ -49,7 +49,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "memberLogin", method = RequestMethod.GET)
-	public ModelAndView getMemberLogin()throws Exception{
+	public ModelAndView getMemberLogin(HttpServletRequest httpServletRequest)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("member/memberLogin");
 		return mv;

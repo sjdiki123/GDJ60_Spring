@@ -178,20 +178,6 @@ public ModelAndView setBoardFileDelete(Long fLong ) throws Exception{
 
 
 
-@ExceptionHandler(NullPointerException.class)
-public  ModelAndView fixException() {
-	ModelAndView mv = new ModelAndView();
-	mv.setViewName("common/error_500");
-	
-	return mv;
-}
 
-@ExceptionHandler(Exception.class)
-public  ModelAndView fix2Exception() {
-	ModelAndView mv = new ModelAndView();
-	mv.setViewName("common/error_500");
-	
-	return mv;
-}
 
 }
